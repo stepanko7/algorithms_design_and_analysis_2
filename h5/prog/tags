@@ -1,0 +1,37 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+MAXNUM	t.py	/^MAXNUM = 10**10$/;"	v
+Node	node.py	/^class Node:$/;"	c
+TSP	t.py	/^def TSP(nodes,maxminedges):$/;"	f
+TSP2	t.py	/^def TSP2(nodes):$/;"	f
+TSP3	t.py	/^def TSP3(nodes):$/;"	f
+TSP5	t.py	/^def TSP5(nodes):$/;"	f
+__init__	node.py	/^  def __init__(self,n,x,y):$/;"	m	class:Node
+bits2set	t.py	/^def bits2set(bits,n):$/;"	f
+cmpedgecost	t.py	/^def cmpedgecost(e1,e2):$/;"	f
+d	t.py	/^      d = math.sqrt((ni.x-nj.x)**2+(ni.y-nj.y)**2)$/;"	v
+edge	t.py	/^      edge = [i,j,d]$/;"	v
+edges	t.py	/^  edges = []$/;"	v
+edgesdct	t.py	/^  edgesdct = {}$/;"	v
+f	t.py	/^  f = open(files[0])$/;"	v
+files	t.py	/^  files = glob.glob("tsp.txt")$/;"	v
+fle	t.py	/^  fle = open("res.txt","w")$/;"	v
+i	t.py	/^  i = 0$/;"	v
+i	t.py	/^  i=0$/;"	v
+j	t.py	/^    j=0$/;"	v
+l	t.py	/^  l = lines[0]$/;"	v
+lines	t.py	/^  lines = f.readlines()$/;"	v
+mincost	t.py	/^  mincost = TSP5(nodes)$/;"	v
+ni	t.py	/^    ni = nodes[i]$/;"	v
+nj	t.py	/^      nj = nodes[j]$/;"	v
+nodes	t.py	/^  nodes = []$/;"	v
+numnodes	t.py	/^  numnodes = int(nums[0])$/;"	v
+nums	t.py	/^    nums = [float(n) for n in nums]$/;"	v
+nums	t.py	/^    nums = l.strip().split(' ')$/;"	v
+nums	t.py	/^  nums = l.strip().split(' ')$/;"	v
+plot_nodes	t.py	/^def plot_nodes(nodes,filename):$/;"	f
+set2bits	t.py	/^def set2bits(st,n):$/;"	f

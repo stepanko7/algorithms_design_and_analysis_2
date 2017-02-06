@@ -1,0 +1,140 @@
+Question 1
+
+Which of the following statements cannot be true, given the current state of knowledge?
+
+O  Some NP-complete problems are polynomial-time solvable, and some NP-complete problems are not polynomial-time solvable.
+
+OX  There is no NP-complete problem that can be solved in O(n^logn) time, where n is the size of the input.
+    n^log(n) = e^log(n^log(n))=e^(log(n)*log(n)) < e^n
+    Because log(n)*log(n) is much smaller than e^n
+
+    BAD: For all we know, the running time required to solve NP-complete
+problems could be anywhere between polynomial and exponential (note that n^logn is more than polynomial but less than exponential).
+
+            
+X  There is an NP-complete problem that can be solved in O(n^logn) time, where n is the size of the input.
+    n^log(n) = e^log(n^log(n))=e^(log(n)*log(n)) < e^n
+    Because log(n)*log(n) is much smaller than e^n
+
+O  There is an NP-complete problem that is polynomial-time solvable.
+
+
+
+
+
+Question 2
+Choose the strongest true statement.
+
+O  If the maximum-size independent set problem can be solved in time O(T(n)) in general graphs, then the minimum-size vertex cover problem can be solved in time O(T(n)) in general graphs.
+
+X  All three of the other assertions are true.
+    This is because the solution of the NP-complete problems could be reduced
+in polynomial time to the solution of the other NP-complete problem.
+GOOD
+
+O  If the minimum-size vertex cover problem can be solved in time O(T(n)) in general graphs, then the maximum-size independent set problem can be solved in time O(T(n)) in general graphs.
+
+O  If the minimum-size vertex cover problem can be solved in time O(T(n)) in bipartite graphs, then the maximum-size independent set problem can be solved in time O(T(n)) in bipartite graphs.
+
+
+
+
+
+Question 3
+Which of the following statements is true?
+
+O  Consider a TSP instance in which every edge cost is negative. Deleting a vertex and all of its incident edges cannot increase the cost of the optimal (i.e., minimum sum of edge lengths) tour.
+
+No. If delete vertex and all the edges, the cost might increase:
+
+    V1---(-1)-------VX
+    |                |
+    |__(-9)_V2_(-9)__|
+
+Deleteing V2 will increase the cost?
+
+
+X  Consider a TSP instance in which every edge cost is the Euclidean distance between two points in the place (just like in Programming Assignment #5). Deleting a vertex and all of its incident edges cannot increase the cost of the optimal (i.e., minimum sum of edge lengths) tour.
+
+Yes.
+(length of V1-VX path) < (length of V1-V2 path) + (length of V2-VX path)
+
+GOOD
+
+O  Consider a TSP instance in which every edge cost is negative. The dynamic programming algorithm covered in the video lectures might not correctly compute the optimal (i.e., minimum sum of edge lengths) tour of this instance.
+
+Why should it fail! CHECK this
+
+O  Consider a TSP instance in which every edge cost is either 1 or 2. Then an optimal tour can be computed in polynomial time.
+
+
+
+
+
+
+
+
+Question 4
+Let TSP1 denote the following problem: given a TSP instance in which all edge costs are positive integers, compute the value of an optimal TSP tour. Let TSP2 denote: given a TSP instance in which all edge costs are positive integers, and a positive integer T, decide whether or not there is a TSP tour with total length at most T. Let HAM1 denote: given an undirected graph, either return the edges of a Hamiltonian cycle (a cycle that visits every vertex exactly once), or correctly decide that the graph has no such cycle. Let HAM2 denote: given an undirected graph, decide whether or not the graph contains at least one Hamiltonian cycle.
+
+O  Polynomial-time solvability of TSP2 does not necessarily imply polynomial-time solvability of TSP1. But, if HAM2 is polynomial-time solvable, then so is HAM1.
+
+OX  If TSP2 is polynomial-time solvable, then so is TSP1. But, polynomial-time solvability of HAM2 does not necessarily imply polynomial-time solvability of HAM1.
+
+BAD
+
+O  Polynomial-time solvability of TSP2 does not necessarily imply polynomial-time solvability of TSP1. Polynomial-time solvability of HAM2 does not necessarily imply polynomial-time solvability of HAM1.
+
+X  If TSP2 is polynomial-time solvable, then so is TSP1. If HAM2 is polynomial-time solvable, then so is HAM1.
+
+This should be good!
+
+      In order to solve TSP1, one has to run TSP2 for every cost T, from 0 to some
+      maximum. And since there are at most n*(n-1) edges, the max cost T is
+      polynomial in n. Therefore "If TSP2 is polynomial-time solvable, then so is
+      TSP1."!
+
+      Next, HAM2 only gives information if there is at least one cycle, it does not
+      return the cycle, so:
+
+      "But, polynomial-time solvability of HAM2 does not necessarily imply polynomial-time solvability of HAM1."
+
+
+
+
+
+
+Question 5
+Assume that P≠NP. Consider undirected graphs with nonnegative edge lengths. Which of the following problems can be solved in polynomial time?
+
+Hint: The Hamiltonian path problem is: given an undirected graph with n vertices, decide whether or not there is a (cycle-free) path with n−1 edges that visits every vertex exactly once. You can use the fact that the Hamiltonian path problem is NP-complete. There are relatively simple reductions from the Hamiltonian path problem to 3 of the 4 problems below.
+
+
+O  For a given source s and destination t, compute the length of a shortest s-t path that has exactly n−1 edges (or +∞, if no such path exists). The path is not allowed to contain cycles.
+
+  This is evidently harder than the HAM path problem! As path should be
+minimal! n-1 edges + no cycles => n vertices in the path
+
+
+O  Amongst all spanning trees of the graph, compute one with the minimum-possible maximum degree. (Recall the degree of a vertex is the number of incident edges.)
+
+ This seems to be similar to the HAMPath problem, as there might be a graph input,
+for which minimum-possible maximum degree of the spanning tree is 2, i.e. the
+spanning tree is a HAM Path!
+
+
+O  Amongst all spanning trees of the graph, compute one with the smallest-possible number of leaves.
+
+The same is true here, the minimal possible number of leave is 1, in
+case the sanning tree is a HAM Path.
+
+
+X  For a given source s and destination t, compute the length of a shortest s-t path that has exactly n−1 edges (or +∞, if no such path exists). The path is allowed to contain cycles.
+
+This problem might be solved with simple modification of the Bellman-Ford
+lagorithm? ????
+
+GOOD: HINT: Use a Bellman-Ford-type recurrence.
+
+
+
